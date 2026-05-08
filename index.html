@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Templates de site - Plombier chauffagiste</title>
+<meta name="description" content="3 packs de templates de site web pour plombier chauffagiste : Simple, Standard, Premium. Abonnement mensuel tout compris.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Manrope', system-ui, sans-serif;
+    color: #3A3F4A;
+    background: #FAF6F0;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3 { font-family: 'Fraunces', Georgia, serif; color: #154780; letter-spacing: -0.02em; }
+  h1 { font-size: clamp(2.25rem, 5vw, 3.5rem); font-weight: 700; line-height: 1.05; }
+  h2 { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 600; }
+  h3 { font-size: 1.375rem; font-weight: 600; }
+  a { color: #1E5FA8; text-decoration: none; transition: color 200ms; }
+  a:hover { color: #E63027; }
+  .container { width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 1.5rem; }
+
+  /* HERO */
+  header.hero {
+    background: linear-gradient(135deg, #154780 0%, #1E5FA8 100%);
+    color: white;
+    padding: 4.5rem 0 5.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  header.hero::before {
+    content: '';
+    position: absolute;
+    top: -50%; right: -20%;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, #E63027 0%, transparent 70%);
+    opacity: 0.15;
+  }
+  header.hero h1 { color: white; max-width: 760px; }
+  header.hero h1 em { color: #FCE4E2; font-style: italic; font-weight: 400; }
+  header.hero .lead { font-size: 1.1875rem; max-width: 640px; margin-top: 1.25rem; opacity: 0.92; line-height: 1.55; }
+  header.hero .eyebrow {
+    display: inline-flex; align-items: center; gap: 0.75rem;
+    font-size: 0.75rem; font-weight: 600;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: #FCE4E2; margin-bottom: 1rem;
+  }
+  header.hero .eyebrow::before { content: ''; width: 28px; height: 1.5px; background: #FCE4E2; }
+
+  /* PACKS GRID */
+  section.packs { padding: 5rem 0; background: #FAF6F0; }
+  .pack-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+    align-items: stretch;
+  }
+  @media (max-width: 1100px) {
+    .pack-grid { grid-template-columns: 1fr; max-width: 480px; margin-left: auto; margin-right: auto; }
+  }
+
+  .pack-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid #E1E5EB;
+    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  .pack-card.featured {
+    border: 2px solid #E63027;
+    transform: scale(1.02);
+    box-shadow: 0 12px 40px rgba(230, 48, 39, 0.15);
+  }
+  .pack-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 44px rgba(15, 30, 46, 0.12);
+  }
+  .pack-card.featured:hover {
+    transform: scale(1.02) translateY(-4px);
+  }
+  .pack-card-badge {
+    position: absolute;
+    top: 12px; right: 12px;
+    background: #E63027;
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 999px;
+    box-shadow: 0 4px 12px rgba(230, 48, 39, 0.25);
+  }
+
+  .pack-card-header {
+    padding: 1.75rem 1.75rem 1.5rem;
+    border-bottom: 1px solid #E1E5EB;
+  }
+  .pack-tag {
+    display: inline-block;
+    padding: 4px 10px;
+    background: #E6F1FB;
+    color: #185FA5;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border-radius: 999px;
+    margin-bottom: 1rem;
+  }
+  .pack-card.featured .pack-tag {
+    background: #FCE4E2;
+    color: #C8202E;
+  }
+  .pack-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.4rem;
+  }
+  .pack-card-tagline {
+    font-size: 0.875rem;
+    color: #6B7280;
+    line-height: 1.5;
+  }
+
+  /* Prix */
+  .pack-price {
+    padding: 1.5rem 1.75rem;
+    background: #F5F7FA;
+    border-bottom: 1px solid #E1E5EB;
+    text-align: center;
+  }
+  .pack-card.featured .pack-price {
+    background: #FFF5F4;
+  }
+  .pack-price-amount {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 4px;
+  }
+  .pack-price-currency {
+    font-size: 1.625rem;
+    font-weight: 600;
+    color: #154780;
+  }
+  .pack-price-num {
+    font-family: 'Fraunces', serif;
+    font-size: 3.25rem;
+    font-weight: 700;
+    color: #154780;
+    line-height: 1;
+  }
+  .pack-card.featured .pack-price-num,
+  .pack-card.featured .pack-price-currency { color: #E63027; }
+  .pack-price-period {
+    font-size: 0.95rem;
+    color: #6B7280;
+    margin-left: 4px;
+  }
+  .pack-price-meta {
+    font-size: 0.825rem;
+    color: #6B7280;
+    margin-top: 0.5rem;
+  }
+
+  /* Body & features */
+  .pack-card-body {
+    padding: 1.5rem 1.75rem 1.75rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .pack-features {
+    list-style: none;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+  }
+  .pack-features li {
+    padding: 0.45rem 0;
+    padding-left: 1.625rem;
+    position: relative;
+    font-size: 0.9375rem;
+    line-height: 1.45;
+  }
+  .pack-features li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    top: 0.45rem;
+    color: #639922;
+    font-weight: 700;
+    font-size: 1rem;
+  }
+  .pack-features li.disabled {
+    color: #B5BAC4;
+  }
+  .pack-features li.disabled::before {
+    content: '✕';
+    color: #B5BAC4;
+  }
+  .pack-features li.highlight {
+    color: #154780;
+    font-weight: 600;
+  }
+  .pack-features li.highlight::before {
+    color: #E63027;
+  }
+
+  .pack-action {
+    margin-top: auto;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.85rem 1.5rem;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 200ms;
+    text-align: center;
+    width: 100%;
+  }
+  .btn-primary {
+    background: #E63027;
+    color: white;
+    box-shadow: 0 8px 24px rgba(230, 48, 39, 0.25);
+  }
+  .btn-primary:hover {
+    background: #C8202E;
+    color: white;
+    transform: translateY(-2px);
+  }
+  .btn-ghost {
+    background: transparent;
+    color: #154780;
+    border: 1.5px solid #154780;
+  }
+  .btn-ghost:hover {
+    background: #154780;
+    color: white;
+  }
+
+  /* FEATURES SECTION */
+  section.features { padding: 4rem 0; background: white; }
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  .feature-card {
+    padding: 1.75rem;
+    background: #F5F7FA;
+    border-radius: 12px;
+  }
+  .feature-card .num {
+    font-family: 'Fraunces', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #E63027;
+    line-height: 1;
+    margin-bottom: 0.75rem;
+  }
+  .feature-card h3 { font-size: 1.125rem; margin-bottom: 0.5rem; }
+  .feature-card p { font-size: 0.95rem; color: #6B7280; }
+
+  /* CTA */
+  section.cta {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, #154780 0%, #1E5FA8 100%);
+    color: white;
+    text-align: center;
+  }
+  section.cta h2 { color: white; max-width: 640px; margin: 0 auto 1rem; }
+  section.cta p { color: rgba(255,255,255,0.85); max-width: 540px; margin: 0 auto 1.5rem; font-size: 1.1rem; }
+
+  /* FOOTER */
+  footer.site-footer {
+    background: #0F2C4F;
+    color: rgba(255,255,255,0.7);
+    padding: 2.5rem 0;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+  footer.site-footer a { color: white; }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .features-grid { grid-template-columns: 1fr; }
+    .pack-card.featured { transform: none; }
+    .pack-card.featured:hover { transform: translateY(-4px); }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="container">
+    <span class="eyebrow">Templates plombier — Showcase agence SEO</span>
+    <h1>Choisissez le <em>pack</em> qui correspond<br>à votre projet</h1>
+    <p class="lead">3 templates de site web optimisés SEO pour plombier chauffagiste. Abonnement mensuel tout compris : hébergement, maintenance, support.</p>
+  </div>
+</header>
+
+<section class="packs">
+  <div class="container">
+
+    <div style="max-width:680px; margin-bottom:1rem;">
+      <h2>Les 3 packs disponibles</h2>
+      <p style="color:#6B7280; margin-top:0.5rem; font-size:1.05rem;">Du site essentiel au site qui domine le SEO local. Tous les packs sont sans engagement de durée.</p>
+    </div>
+
+    <div class="pack-grid">
+
+      <!-- PACK 1 -->
+      <article class="pack-card">
+        <div class="pack-card-header">
+          <span class="pack-tag">Pack 1 — Essentiel</span>
+          <h2>Site simple</h2>
+          <p class="pack-card-tagline">Pour démarrer son SEO et être visible localement</p>
+        </div>
+        <div class="pack-price">
+          <div class="pack-price-amount">
+            <span class="pack-price-num">59</span>
+            <span class="pack-price-currency">€</span>
+            <span class="pack-price-period">/mois</span>
+          </div>
+          <p class="pack-price-meta">Sans engagement · Hébergement inclus</p>
+        </div>
+        <div class="pack-card-body">
+          <ul class="pack-features">
+            <li>7 pages essentielles</li>
+            <li>SEO local complet (Schema.org, FAQ)</li>
+            <li>Charte personnalisable</li>
+            <li>Formulaire de contact</li>
+            <li>Hébergement & nom de domaine inclus</li>
+            <li>Optimisé mobile</li>
+            <li>Conformité RGPD</li>
+            <li class="disabled">Pages services individuelles</li>
+            <li class="disabled">Cartes interactives</li>
+            <li class="disabled">Section réalisations</li>
+            <li class="disabled">Blog & articles SEO</li>
+          </ul>
+          <div class="pack-action">
+            <a href="./pack-1-simple/" class="btn btn-ghost" target="_blank" rel="noopener">Voir la démo →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- PACK 2 -->
+      <article class="pack-card">
+        <div class="pack-card-header">
+          <span class="pack-tag">Pack 2 — Standard</span>
+          <h2>Site standard</h2>
+          <p class="pack-card-tagline">Le bon compromis pour les artisans établis</p>
+        </div>
+        <div class="pack-price">
+          <div class="pack-price-amount">
+            <span class="pack-price-num">89</span>
+            <span class="pack-price-currency">€</span>
+            <span class="pack-price-period">/mois</span>
+          </div>
+          <p class="pack-price-meta">Sans engagement · Maintenance incluse</p>
+        </div>
+        <div class="pack-card-body">
+          <ul class="pack-features">
+            <li class="highlight">Tout le Pack 1, plus :</li>
+            <li>17 pages SEO complètes</li>
+            <li>7 pages services individuelles</li>
+            <li>4 pages zones d'intervention</li>
+            <li>Cartes interactives Leaflet</li>
+            <li>Section Réalisations (galerie)</li>
+            <li>Page rénovation salle de bain</li>
+            <li>Page avis clients dédiée</li>
+            <li>Schema.org poussé (par zone, service)</li>
+            <li class="disabled">Blog & articles SEO mensuels</li>
+            <li class="disabled">Page tarifs détaillée</li>
+            <li class="disabled">Page partenaires & labels</li>
+          </ul>
+          <div class="pack-action">
+            <a href="./pack-2-standard/" class="btn btn-ghost" target="_blank" rel="noopener">Voir la démo →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- PACK 3 -->
+      <article class="pack-card featured">
+        <div class="pack-card-badge">Recommandé</div>
+        <div class="pack-card-header">
+          <span class="pack-tag">Pack 3 — Premium</span>
+          <h2>Site premium</h2>
+          <p class="pack-card-tagline">Pour dominer le SEO local et faire vivre son site</p>
+        </div>
+        <div class="pack-price">
+          <div class="pack-price-amount">
+            <span class="pack-price-num">189</span>
+            <span class="pack-price-currency">€</span>
+            <span class="pack-price-period">/mois</span>
+          </div>
+          <p class="pack-price-meta"><strong>1 article de blog inclus / mois</strong></p>
+        </div>
+        <div class="pack-card-body">
+          <ul class="pack-features">
+            <li class="highlight">Tout le Pack 2, plus :</li>
+            <li>Blog actif (5+ articles SEO)</li>
+            <li class="highlight">1 nouvel article rédigé / mois</li>
+            <li>Page tarifs détaillée</li>
+            <li>Page partenaires & labels</li>
+            <li>6+ zones d'intervention détaillées</li>
+            <li>Maintenance trimestrielle premium</li>
+            <li>Suivi Google Search Console</li>
+            <li>Reporting mensuel SEO</li>
+            <li>Support prioritaire</li>
+          </ul>
+          <div class="pack-action">
+            <a href="./pack-3-premium/" class="btn btn-primary" target="_blank" rel="noopener">Voir la démo →</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="features">
+  <div class="container">
+    <div style="max-width:680px;">
+      <h2>Ce qui est inclus dans tous les packs</h2>
+      <p style="color:#6B7280; margin-top:0.5rem;">Le socle commun garantit un SEO de qualité et une expérience moderne.</p>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="num">01</div>
+        <h3>SEO local complet</h3>
+        <p>Schema.org Plumber/LocalBusiness, geo meta tags, FAQPage rich snippets. Optimisé pour le pack local Google Maps.</p>
+      </div>
+      <div class="feature-card">
+        <div class="num">02</div>
+        <h3>Performance</h3>
+        <p>HTML/CSS/JS pur (sans framework lourd), images optimisées, lazy loading. Scores Lighthouse 90+.</p>
+      </div>
+      <div class="feature-card">
+        <div class="num">03</div>
+        <h3>Mobile-first</h3>
+        <p>Design responsive, CTA téléphone sticky sur mobile, formulaire optimisé tactile.</p>
+      </div>
+      <div class="feature-card">
+        <div class="num">04</div>
+        <h3>Conformité RGPD</h3>
+        <p>Bandeau cookies, mentions légales, politique cookies, formulaire avec consentement.</p>
+      </div>
+      <div class="feature-card">
+        <div class="num">05</div>
+        <h3>Hébergement inclus</h3>
+        <p>Hébergement, nom de domaine et certificat SSL pris en charge dans l'abonnement mensuel.</p>
+      </div>
+      <div class="feature-card">
+        <div class="num">06</div>
+        <h3>Sans engagement</h3>
+        <p>Aucun engagement de durée. Vous arrêtez quand vous voulez, vous restez propriétaire de votre nom de domaine.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container">
+    <h2 style="font-size: clamp(1.75rem, 3.5vw, 2.5rem);">Discutons de votre projet</h2>
+    <p>Présentation des packs, démo en direct, devis personnalisé selon votre activité et votre zone géographique.</p>
+    <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+      <a href="mailto:contact@votre-agence.fr" class="btn btn-primary" style="width:auto;">Demander un rendez-vous</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>Templates plombier chauffagiste — Showcase agence SEO</p>
+    <p style="margin-top:0.5rem; opacity:0.6; font-size:0.85rem;">⚠️ Démos en mode preview/staging — Pas pour usage public direct</p>
+  </div>
+</footer>
+
+</body>
+</html>

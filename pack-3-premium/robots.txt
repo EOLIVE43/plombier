@@ -1,0 +1,57 @@
+# ============================================================
+# robots.txt - Julien Burande Plomberie Chauffagiste
+# ============================================================
+#
+# ⚠️⚠️⚠️ MODE PREVIEW / STAGING ⚠️⚠️⚠️
+# Ce site est actuellement en preview (Netlify, GitHub Pages, ou autre URL de test).
+# TOUS les robots sont bloqués pour empêcher l'indexation prématurée.
+#
+# === À LA MISE EN PRODUCTION (sur le vrai domaine burande-plomberie.fr) ===
+# Remplacer le contenu de ce fichier par la version PRODUCTION ci-dessous (commentée).
+# Et remettre les <meta name="robots"> en "index, follow" dans les 21 fichiers HTML.
+#
+# Recherche rapide pour les retrouver :
+#   grep -rn "MODE PREVIEW" *.html services/ zones/ blog/ a-propos/ avis-clients/ contact/ mentions-legales/ politique-cookies/ renovation-salle-de-bain/
+# ============================================================
+
+# === VERSION STAGING (active actuellement) ===
+User-agent: *
+Disallow: /
+
+# Bloquer aussi les bots IA pour cohérence
+User-agent: GPTBot
+Disallow: /
+User-agent: ChatGPT-User
+Disallow: /
+User-agent: CCBot
+Disallow: /
+User-agent: Claude-Web
+Disallow: /
+User-agent: anthropic-ai
+Disallow: /
+User-agent: PerplexityBot
+Disallow: /
+
+# Pas de sitemap déclaré en staging (volontaire)
+
+
+# ============================================================
+# === VERSION PRODUCTION (à activer le jour de la mise en ligne) ===
+# ============================================================
+# User-agent: *
+# Allow: /
+#
+# Disallow: /mentions-legales/
+# Disallow: /politique-cookies/
+# Disallow: /_generate_*.py
+#
+# Sitemap: https://www.burande-plomberie.fr/sitemap.xml
+#
+# User-agent: Googlebot
+# Allow: /
+#
+# User-agent: Bingbot
+# Allow: /
+#
+# User-agent: DuckDuckBot
+# Allow: /

@@ -2010,3 +2010,27 @@ section { padding-block: var(--sp-6); }
   border-left: 1px solid rgba(255, 255, 255, 0.2);
   padding-left: var(--sp-4);
 }
+
+
+/* ============================================================
+   MEGA MENU : positionnement par défaut (corrigé via JS)
+   ============================================================ */
+
+@media (min-width: 992px) {
+  /* Position de base : aligné à gauche du parent */
+  .has-dropdown .dropdown-panel {
+    left: 0;
+    right: auto;
+  }
+  
+  /* Limiter la largeur max pour ne jamais déborder */
+  .dropdown-panel {
+    max-width: min(420px, calc(100vw - 32px));
+  }
+  
+  /* Class ajoutée par JS quand le panel déborderait à droite */
+  .has-dropdown.dropdown-flip-right .dropdown-panel {
+    left: auto !important;
+    right: 0 !important;
+  }
+}

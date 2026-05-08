@@ -24,8 +24,13 @@
 @media (max-width: 991px) {
   .hero-grid {
     grid-template-columns: 1fr;
-    gap: var(--sp-7);
+    grid-template-areas:
+      "header"
+      "visual"
+      "content";
+    gap: var(--sp-5);
   }
+  .hero-header { max-width: 100%; }
   .hero-visual { max-width: 480px; margin-inline: auto; }
   .footer-grid {
     grid-template-columns: 1fr 1fr;

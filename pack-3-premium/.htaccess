@@ -1,0 +1,149 @@
+# ============================================================
+# .htaccess - Julien Burande Plomberie Chauffagiste
+# Optimisations SEO + performance + sécurité
+# ============================================================
+
+# Activation du moteur de réécriture d'URL
+RewriteEngine On
+
+# ============================================================
+# 1. REDIRECTIONS HTTPS (à activer une fois le SSL en place)
+# ============================================================
+
+# Forcer HTTPS
+# RewriteCond %{HTTPS} off
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# ============================================================
+# 2. REDIRECTIONS WWW (choisir UNE des deux options)
+# ============================================================
+
+# Option A : Forcer le www (recommandé pour cohérence avec canonicals)
+RewriteCond %{HTTP_HOST} ^burande-plomberie\.fr [NC]
+RewriteRule ^(.*)$ https://www.burande-plomberie.fr/$1 [L,R=301]
+
+# Option B : Forcer SANS www (commenté)
+# RewriteCond %{HTTP_HOST} ^www\.burande-plomberie\.fr [NC]
+# RewriteRule ^(.*)$ https://burande-plomberie.fr/$1 [L,R=301]
+
+# ============================================================
+# 3. URLS PROPRES (suppression du .html)
+# ============================================================
+
+# Supprimer .html des URLs (302 -> 301 une fois testé)
+RewriteCond %{THE_REQUEST} \s/+(.+?)\.html[\s?] [NC]
+RewriteRule ^ /%1/ [L,R=301]
+
+# Servir le bon fichier .html si l'URL ne se termine pas par /
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.+?)/?$ $1.html [L]
+
+# ============================================================
+# 4. PAGE D'ERREUR 404 PERSONNALISÉE
+# ============================================================
+
+# ErrorDocument 404 /404.html
+
+# ============================================================
+# 5. COMPRESSION GZIP (gain performance important)
+# ============================================================
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html
+  AddOutputFilterByType DEFLATE text/css
+  AddOutputFilterByType DEFLATE text/javascript
+  AddOutputFilterByType DEFLATE text/xml
+  AddOutputFilterByType DEFLATE text/plain
+  AddOutputFilterByType DEFLATE application/javascript
+  AddOutputFilterByType DEFLATE application/x-javascript
+  AddOutputFilterByType DEFLATE application/json
+  AddOutputFilterByType DEFLATE application/xml
+  AddOutputFilterByType DEFLATE application/rss+xml
+  AddOutputFilterByType DEFLATE image/svg+xml
+  AddOutputFilterByType DEFLATE font/woff
+  AddOutputFilterByType DEFLATE font/woff2
+</IfModule>
+
+# ============================================================
+# 6. CACHE NAVIGATEUR (gain performance)
+# ============================================================
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault "access plus 1 month"
+
+  # HTML : pas de cache trop long (pour pouvoir mettre à jour)
+  ExpiresByType text/html "access plus 0 seconds"
+
+  # CSS/JS : 1 mois
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType text/javascript "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+
+  # Images : 1 an
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType image/x-icon "access plus 1 year"
+
+  # Fonts : 1 an
+  ExpiresByType font/woff "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType application/font-woff "access plus 1 year"
+  ExpiresByType application/font-woff2 "access plus 1 year"
+</IfModule>
+
+# ============================================================
+# 7. SÉCURITÉ - HEADERS HTTP
+# ============================================================
+
+<IfModule mod_headers.c>
+  # Empêcher le clickjacking
+  Header always set X-Frame-Options "SAMEORIGIN"
+
+  # Empêcher le MIME-sniffing
+  Header always set X-Content-Type-Options "nosniff"
+
+  # Activer la protection XSS du navigateur
+  Header always set X-XSS-Protection "1; mode=block"
+
+  # Politique referrer
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+  # Permissions Policy (anciennement Feature Policy)
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+
+  # HSTS (à activer une fois HTTPS opérationnel)
+  # Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains" env=HTTPS
+</IfModule>
+
+# ============================================================
+# 8. PROTÉGER CERTAINS FICHIERS
+# ============================================================
+
+# Bloquer l'accès aux fichiers .htaccess, .htpasswd, configurations
+<FilesMatch "^(\.htaccess|\.htpasswd|\.git|composer\.(json|lock)|package\.(json|lock)|_generate.*\.py)$">
+  Order allow,deny
+  Deny from all
+</FilesMatch>
+
+# Bloquer l'accès aux dossiers sensibles
+RedirectMatch 404 /\.git
+RedirectMatch 404 /\.env
+
+# ============================================================
+# 9. ENCODAGE PAR DÉFAUT
+# ============================================================
+
+AddDefaultCharset UTF-8
+
+# ============================================================
+# 10. PAGE D'INDEX
+# ============================================================
+
+DirectoryIndex index.html index.htm
+
+# Désactiver le listing des dossiers
+Options -Indexes

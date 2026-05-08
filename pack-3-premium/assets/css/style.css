@@ -159,8 +159,8 @@ p { color: var(--c-charcoal); }
   .container, .container-narrow { padding-inline: var(--sp-6); }
 }
 
-section { padding-block: var(--sp-7); }
-@media (min-width: 768px) { section { padding-block: var(--sp-8); } }
+section { padding-block: var(--sp-6); }
+@media (min-width: 768px) { section { padding-block: var(--sp-7); } }
 
 .section-dark {
   background: var(--c-night);
@@ -439,7 +439,7 @@ section { padding-block: var(--sp-7); }
 .hero {
   position: relative;
   background: var(--c-cream);
-  padding-block: var(--sp-9) var(--sp-10);
+  padding-block: var(--sp-6) var(--sp-7);
   overflow: hidden;
 }
 .hero::before {
@@ -896,7 +896,7 @@ section { padding-block: var(--sp-7); }
 .site-footer {
   background: var(--c-night-deep);
   color: rgba(255, 255, 255, 0.78);
-  padding-block: var(--sp-9) var(--sp-6);
+  padding-block: var(--sp-7) var(--sp-5);
   font-size: 0.9375rem;
 }
 .footer-grid {
@@ -1000,7 +1000,7 @@ section { padding-block: var(--sp-7); }
    ============================================================ */
 .page-header {
   background: var(--c-cream);
-  padding-block: var(--sp-7) var(--sp-8);
+  padding-block: var(--sp-6) var(--sp-7);
   border-bottom: 1px solid var(--c-line);
   position: relative;
   overflow: hidden;
@@ -1234,7 +1234,7 @@ section { padding-block: var(--sp-7); }
   position: relative;
   background: var(--c-night-deep);
   overflow: hidden;
-  padding-block: var(--sp-9);
+  padding-block: var(--sp-7);
   color: var(--c-white);
 }
 .page-header-with-image::before {
@@ -1987,4 +1987,144 @@ section { padding-block: var(--sp-7); }
   color: var(--c-fire);
   font-weight: 600;
   white-space: nowrap;
+}
+
+/* ============================================================
+   26. ZONES - CARDS DE SERVICES (remplaçant les listes h3+p)
+   ============================================================ */
+.zone-services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--sp-4);
+  margin-block: var(--sp-5);
+}
+.zone-service-card {
+  display: flex;
+  flex-direction: column;
+  padding: var(--sp-5);
+  background: var(--c-white);
+  border: 1px solid var(--c-line);
+  border-radius: var(--r-lg);
+  transition: all 200ms ease;
+  text-decoration: none;
+  color: inherit;
+}
+.zone-service-card:hover {
+  border-color: var(--c-fire);
+  background: var(--c-cream-warm);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(15, 30, 46, 0.08);
+}
+.zone-service-card--featured {
+  background: var(--c-night-deep);
+  color: var(--c-cream);
+  border-color: var(--c-night-deep);
+}
+.zone-service-card--featured:hover {
+  background: var(--c-night);
+  color: var(--c-white);
+  border-color: var(--c-fire);
+}
+.zone-service-card--featured .zone-service-icon {
+  background: var(--c-fire);
+  color: var(--c-white);
+}
+.zone-service-card--featured h3 {
+  color: var(--c-cream);
+}
+.zone-service-card--featured p {
+  color: rgba(250, 246, 240, 0.85);
+}
+.zone-service-card--featured .zone-service-link {
+  color: var(--c-fire);
+}
+.zone-service-icon {
+  width: 44px;
+  height: 44px;
+  background: var(--c-fire-soft);
+  color: var(--c-fire);
+  border-radius: var(--r-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--sp-3);
+}
+.zone-service-card h3 {
+  font-size: 1.1875rem;
+  font-weight: 600;
+  margin: 0 0 var(--sp-2);
+  color: var(--c-night-deep);
+  font-family: var(--f-display);
+}
+.zone-service-card p {
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  color: var(--c-charcoal-soft);
+  margin: 0 0 var(--sp-3);
+  flex-grow: 1;
+}
+.zone-service-link {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--c-fire);
+}
+
+/* Bouton 'Lire le détail' sur les cards réalisations Pack 3 */
+.realisation-card-link {
+  display: inline-block;
+  margin-top: var(--sp-3);
+  padding-top: var(--sp-3);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--c-fire);
+  border-top: 1px solid var(--c-line);
+  transition: color 200ms ease;
+}
+.realisation-card-link:hover {
+  color: var(--c-fire-deep);
+}
+.realisation-card {
+  position: relative;
+}
+.realisation-card-link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+.realisation-card a:not(.realisation-card-link) {
+  position: relative;
+  z-index: 2;
+}
+
+/* Navigation entre réalisations */
+.realisation-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--sp-4);
+  margin-top: var(--sp-7);
+  padding-top: var(--sp-5);
+  border-top: 1px solid var(--c-line);
+}
+.realisation-nav-link {
+  font-size: 0.9375rem;
+  color: var(--c-fire);
+  font-weight: 600;
+  text-decoration: none;
+  flex-basis: 48%;
+  padding: var(--sp-3);
+  border: 1px solid var(--c-line);
+  border-radius: var(--r-md);
+  transition: all 200ms ease;
+}
+.realisation-nav-link:hover {
+  background: var(--c-cream-warm);
+  border-color: var(--c-fire);
+}
+.realisation-nav-link:nth-child(2) {
+  text-align: right;
+}
+@media (max-width: 768px) {
+  .realisation-nav { flex-direction: column; }
+  .realisation-nav-link { flex-basis: 100%; }
 }

@@ -35,7 +35,7 @@
   const RAYON_KM = 40;
 
   // === STYLES MARKERS ===
-  function createIcon(L, type) {
+  function createIcon(L, type, label) {
     const config = {
       atelier: {
         bg: '#1E5FA8',
@@ -43,6 +43,7 @@
         ring: 4,
         ringColor: '#FFFFFF',
         shadowColor: 'rgba(21, 71, 128, 0.35)',
+        labelColor: '#154780',
       },
       mainCity: {
         bg: '#E63027',
@@ -50,6 +51,7 @@
         ring: 3,
         ringColor: '#FFFFFF',
         shadowColor: 'rgba(230, 48, 39, 0.45)',
+        labelColor: '#C8202E',
       },
       city: {
         bg: '#E63027',
@@ -57,21 +59,39 @@
         ring: 2.5,
         ringColor: '#FFFFFF',
         shadowColor: 'rgba(230, 48, 39, 0.25)',
+        labelColor: '#C8202E',
       }
     };
     const c = config[type];
+    const labelSize = type === 'atelier' || type === 'mainCity' ? '0.85rem' : '0.75rem';
+    const labelWeight = type === 'atelier' || type === 'mainCity' ? '700' : '600';
+    
     return L.divIcon({
       className: 'burande-marker burande-marker-' + type,
-      html: `<div style="
-        width: ${c.size}px;
-        height: ${c.size}px;
-        background: ${c.bg};
-        border: ${c.ring}px solid ${c.ringColor};
-        border-radius: 50%;
-        box-shadow: 0 4px 12px ${c.shadowColor}, 0 0 0 1px rgba(0,0,0,0.05);
-        position: relative;
-      "></div>`,
-      iconSize: [c.size + c.ring * 2, c.size + c.ring * 2],
+      html: `<div style="position:relative; display:flex; flex-direction:column; align-items:center;">
+        <div style="
+          width: ${c.size}px;
+          height: ${c.size}px;
+          background: ${c.bg};
+          border: ${c.ring}px solid ${c.ringColor};
+          border-radius: 50%;
+          box-shadow: 0 4px 12px ${c.shadowColor}, 0 0 0 1px rgba(0,0,0,0.05);
+        "></div>
+        ${label ? `<div style="
+          margin-top: 4px;
+          padding: 3px 8px;
+          background: rgba(255,255,255,0.95);
+          color: ${c.labelColor};
+          font-size: ${labelSize};
+          font-weight: ${labelWeight};
+          font-family: 'Manrope', sans-serif;
+          white-space: nowrap;
+          border-radius: 4px;
+          box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+          pointer-events: none;
+        ">${label}</div>` : ''}
+      </div>`,
+      iconSize: [c.size + c.ring * 2, c.size + c.ring * 2 + 26],
       iconAnchor: [(c.size + c.ring * 2) / 2, (c.size + c.ring * 2) / 2],
       popupAnchor: [0, -(c.size / 2 + c.ring)]
     });
@@ -124,7 +144,7 @@
     }).addTo(map);
 
     // Marker atelier (Vézézoux)
-    L.marker([ATELIER.lat, ATELIER.lng], { icon: createIcon(L, 'atelier') })
+    L.marker([ATELIER.lat, ATELIER.lng], { icon: createIcon(L, 'atelier', 'Vézézoux') })
       .addTo(map)
       .bindPopup(`
         <div style="font-family:'Manrope',sans-serif;min-width:160px;">
@@ -138,7 +158,7 @@
     if (showAllCities) {
       COMMUNES.forEach(c => {
         const isMain = centerName && c.name.toLowerCase().includes(centerName.toLowerCase());
-        const icon = createIcon(L, isMain ? 'mainCity' : 'city');
+        const icon = createIcon(L, isMain ? 'mainCity' : 'city', c.name);
         L.marker([c.lat, c.lng], { icon: icon })
           .addTo(map)
           .bindPopup(`

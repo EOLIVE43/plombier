@@ -159,8 +159,8 @@ p { color: var(--c-charcoal); }
   .container, .container-narrow { padding-inline: var(--sp-6); }
 }
 
-section { padding-block: var(--sp-7); }
-@media (min-width: 768px) { section { padding-block: var(--sp-8); } }
+section { padding-block: var(--sp-6); }
+@media (min-width: 768px) { section { padding-block: var(--sp-7); } }
 
 .section-dark {
   background: var(--c-night);
@@ -432,7 +432,7 @@ section { padding-block: var(--sp-7); }
 .hero {
   position: relative;
   background: var(--c-cream);
-  padding-block: var(--sp-9) var(--sp-10);
+  padding-block: var(--sp-6) var(--sp-7);
   overflow: hidden;
 }
 .hero::before {
@@ -889,7 +889,7 @@ section { padding-block: var(--sp-7); }
 .site-footer {
   background: var(--c-night-deep);
   color: rgba(255, 255, 255, 0.78);
-  padding-block: var(--sp-9) var(--sp-6);
+  padding-block: var(--sp-7) var(--sp-5);
   font-size: 0.9375rem;
 }
 .footer-grid {
@@ -993,7 +993,7 @@ section { padding-block: var(--sp-7); }
    ============================================================ */
 .page-header {
   background: var(--c-cream);
-  padding-block: var(--sp-7) var(--sp-8);
+  padding-block: var(--sp-6) var(--sp-7);
   border-bottom: 1px solid var(--c-line);
   position: relative;
   overflow: hidden;
@@ -1227,7 +1227,7 @@ section { padding-block: var(--sp-7); }
   position: relative;
   background: var(--c-night-deep);
   overflow: hidden;
-  padding-block: var(--sp-9);
+  padding-block: var(--sp-7);
   color: var(--c-white);
 }
 .page-header-with-image::before {

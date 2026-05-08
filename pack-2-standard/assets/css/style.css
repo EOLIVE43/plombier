@@ -1983,3 +1983,30 @@ section { padding-block: var(--sp-6); }
   .hero.hero-bg { min-height: 480px; }
   .hero-bg-content { min-height: 480px; padding-block: var(--sp-6); }
 }
+
+
+/* Override : neutraliser le fond blanc hérité du .hero-trust ancien dans le hero T2 */
+.hero-bg .hero-trust {
+  background: transparent;
+  border: none;
+  padding: 0;
+  max-width: 100%;
+  margin-top: var(--sp-2);
+}
+.hero-bg .hero-trust strong {
+  font-family: var(--f-display);
+  font-size: 1.25rem;
+  color: var(--c-white);
+  display: block;
+  line-height: 1.2;
+}
+.hero-bg .hero-trust span {
+  display: block;
+  font-size: 0.825rem;
+  color: rgba(255, 255, 255, 0.78);
+  margin-top: 2px;
+}
+.hero-bg .hero-trust-divider {
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  padding-left: var(--sp-4);
+}

@@ -304,6 +304,310 @@
     .pack-card.featured { transform: none; }
     .pack-card.featured:hover { transform: translateY(-4px); }
   }
+
+  /* === Section "Comment ça marche" === */
+  section.how-it-works {
+    padding: 5rem 0;
+    background: white;
+  }
+  .section-intro {
+    max-width: 680px;
+    margin-bottom: 3rem;
+  }
+  .eyebrow-badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #C8202E;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+  }
+  .section-intro h2 {
+    font-size: clamp(1.75rem, 3vw, 2.25rem);
+    margin-bottom: 0.5rem;
+  }
+  .lead-muted {
+    color: #6B7280;
+    font-size: 1.05rem;
+  }
+  .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+  }
+  .step-card {
+    background: #FAF6F0;
+    padding: 1.75rem 1.5rem;
+    border-radius: 12px;
+    border: 1px solid #E1E5EB;
+  }
+  .step-num {
+    width: 36px;
+    height: 36px;
+    background: #154780;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  .step-title {
+    font-size: 1.125rem;
+    color: #154780;
+    margin-bottom: 0.5rem;
+    font-family: 'Fraunces', Georgia, serif;
+  }
+  .step-card p {
+    font-size: 0.95rem;
+    color: #4B5563;
+    line-height: 1.6;
+    margin: 0;
+  }
+  .rhythm-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin-bottom: 3rem;
+  }
+  .rhythm-card {
+    background: #F5F7FA;
+    padding: 0.875rem 1.125rem;
+    border-radius: 8px;
+    border-left: 3px solid #1E5FA8;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .rhythm-card strong {
+    color: #154780;
+    font-size: 0.95rem;
+  }
+  .rhythm-card span {
+    color: #6B7280;
+    font-size: 0.875rem;
+  }
+  .faq-block {
+    max-width: 760px;
+    margin: 0 auto;
+    padding-top: 2rem;
+    border-top: 1px solid #E1E5EB;
+  }
+  .faq-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .faq-item {
+    background: white;
+    border: 1px solid #E1E5EB;
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    transition: border-color 200ms;
+  }
+  .faq-item[open] {
+    border-color: #1E5FA8;
+    background: #F5F7FA;
+  }
+  .faq-item summary {
+    font-weight: 600;
+    cursor: pointer;
+    color: #154780;
+    list-style: none;
+    position: relative;
+    padding-right: 2rem;
+  }
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+  .faq-item summary::after {
+    content: '+';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.25rem;
+    color: #1E5FA8;
+    font-weight: 400;
+    transition: transform 200ms;
+  }
+  .faq-item[open] summary::after {
+    content: '−';
+  }
+  .faq-item p {
+    margin: 0.75rem 0 0;
+    color: #4B5563;
+    line-height: 1.65;
+    font-size: 0.95rem;
+  }
+
+  @media (max-width: 768px) {
+    .steps-grid { grid-template-columns: 1fr; }
+    .rhythm-row { grid-template-columns: 1fr; }
+  }
+
+
+  /* === Add-on Google Ads === */
+  section.addon-section {
+    padding: 0 0 4rem;
+    background: #FAF6F0;
+  }
+  .addon-card {
+    background: linear-gradient(135deg, #154780 0%, #1E5FA8 100%);
+    color: white;
+    border-radius: 16px;
+    padding: 2.5rem;
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 2.5rem;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .addon-card::before {
+    content: '';
+    position: absolute;
+    top: -80px;
+    right: -80px;
+    width: 280px;
+    height: 280px;
+    background: radial-gradient(circle, rgba(230, 48, 39, 0.18) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .addon-left { position: relative; z-index: 1; }
+  .addon-right { position: relative; z-index: 1; text-align: center; }
+  .addon-badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #FCE4E2;
+    font-weight: 600;
+    padding: 0.4rem 0.85rem;
+    background: rgba(230, 48, 39, 0.20);
+    border: 1px solid rgba(252, 228, 226, 0.35);
+    border-radius: 999px;
+    margin-bottom: 1rem;
+  }
+  .addon-title {
+    color: white;
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    margin-bottom: 0.75rem;
+    line-height: 1.15;
+  }
+  .addon-desc {
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+  }
+  .addon-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .addon-features li {
+    color: rgba(255, 255, 255, 0.92);
+    font-size: 0.95rem;
+    padding-left: 1.5rem;
+    position: relative;
+    line-height: 1.5;
+  }
+  .addon-features li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #FCE4E2;
+    font-weight: 700;
+  }
+  .addon-features li strong {
+    color: white;
+    background: rgba(230, 48, 39, 0.85);
+    padding: 0.15rem 0.55rem;
+    border-radius: 4px;
+    font-weight: 600;
+  }
+  .addon-price-block {
+    background: rgba(255, 255, 255, 0.10);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 12px;
+    padding: 1.5rem 1.25rem;
+    margin-bottom: 1rem;
+  }
+  .addon-price-from {
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 0.85rem;
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+  .addon-price {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 0.25rem;
+    margin-bottom: 0.5rem;
+  }
+  .addon-price-num {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: white;
+    letter-spacing: -0.03em;
+    line-height: 1;
+  }
+  .addon-price-currency {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 1.5rem;
+    color: #FCE4E2;
+    font-weight: 600;
+  }
+  .addon-price-period {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.78);
+  }
+  .addon-price-meta {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.45;
+    margin: 0;
+  }
+  .btn-addon {
+    display: inline-block;
+    padding: 0.875rem 2rem;
+    background: #E63027;
+    color: white;
+    border-radius: 999px;
+    font-weight: 600;
+    transition: background 200ms, transform 100ms;
+    border: none;
+  }
+  .btn-addon:hover {
+    background: #C8202E;
+    color: white;
+    transform: translateY(-1px);
+  }
+
+  @media (max-width: 768px) {
+    .addon-card {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      padding: 1.75rem 1.5rem;
+    }
+    .addon-right { text-align: center; }
+  }
+
 </style>
 </head>
 <body>
@@ -433,6 +737,95 @@
       </article>
 
     </div>
+  </div>
+</section>
+
+<section class="addon-section">
+  <div class="container">
+    <div class="addon-card">
+      <div class="addon-left">
+        <span class="addon-badge">Option additionnelle · Compatible avec les 3 packs</span>
+        <h2 class="addon-title">Visibilité géolocale Google Ads</h2>
+        <p class="addon-desc">Apparaissez en première position sur Google sur vos requêtes locales (« plombier brioude », « dépannage chauffage 43 », etc.). Campagne configurée, suivie et optimisée chaque mois par nos soins.</p>
+        <ul class="addon-features">
+          <li>Setup complet de votre compte Google Ads</li>
+          <li>Mots-clés locaux ciblés (rayon géographique défini avec vous)</li>
+          <li>Optimisation continue des annonces et enchères</li>
+          <li>Reporting mensuel des résultats</li>
+          <li><strong>Minimum garanti : 100 visiteurs qualifiés / mois</strong></li>
+        </ul>
+      </div>
+      <div class="addon-right">
+        <div class="addon-price-block">
+          <span class="addon-price-from">À partir de</span>
+          <div class="addon-price">
+            <span class="addon-price-num">290</span>
+            <span class="addon-price-currency">€</span>
+            <span class="addon-price-period">HT / mois</span>
+          </div>
+          <p class="addon-price-meta">Selon le budget crédité auprès de la régie Google Ads</p>
+        </div>
+        <a href="mailto:contact@eoliz.fr?subject=Demande%20d%27informations%20Google%20Ads" class="btn btn-addon">En savoir plus</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="how-it-works">
+  <div class="container">
+    <div class="section-intro">
+      <span class="eyebrow-badge">Comment ça marche</span>
+      <h2>Vous vous concentrez sur votre métier, on s'occupe du reste</h2>
+      <p class="lead-muted">Aucune compétence technique requise. Aucun mot de passe à retenir.</p>
+    </div>
+
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <h3 class="step-title">Vous déposez</h3>
+        <p>Photos de chantiers, idées d'articles, modifs de tarifs : tout dans un dossier Google Drive partagé entre vous et nous.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <h3 class="step-title">On rédige et publie</h3>
+        <p>On optimise le SEO, retouche les photos et formate joliment, dans le respect du template proposé pour préserver la cohérence du site.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <h3 class="step-title">Votre site avance</h3>
+        <p>Vous recevez un récap mail de ce qui a été ajouté à votre site, avec les liens directs vers les nouvelles pages.</p>
+      </div>
+    </div>
+
+    <div class="rhythm-row">
+      <div class="rhythm-card">
+        <strong>Pack 2 Standard</strong>
+        <span>1 mise à jour par trimestre incluse</span>
+      </div>
+      <div class="rhythm-card">
+        <strong>Pack 3 Premium</strong>
+        <span>1 article + mises à jour chaque mois</span>
+      </div>
+    </div>
+
+    <div class="faq-block">
+      <h3 class="faq-title">Questions fréquentes</h3>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Je peux modifier le site moi-même ?</summary>
+          <p>Pas directement, et c'est volontaire : ça garantit la qualité technique, le SEO et la cohérence visuelle de votre site sur la durée. Vous nous transmettez vos demandes via le Drive partagé, on s'occupe du reste — comme un imprimeur, un comptable ou un graphiste.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Si j'ai une urgence (numéro changé, horaires) ?</summary>
+          <p>Modifications urgentes traitées sous 48–72h ouvrées (téléphone, horaires, message d'absence, photo de profil). Aucun supplément.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Et si je veux publier mes articles moi-même ?</summary>
+          <p>Possible en option : interface d'admin sécurisée à +50€/mois sur le Pack 3. Mais 95% de nos clients préfèrent qu'on s'en charge — ça leur enlève une charge mentale et garantit la qualité du référencement.</p>
+        </details>
+      </div>
+    </div>
+
   </div>
 </section>
 

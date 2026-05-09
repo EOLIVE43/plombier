@@ -12,7 +12,7 @@
   // === CONSTANTES ===
   const ATELIER = {
     name: 'Vézézoux',
-    sub: 'Atelier de Julien',
+    sub: 'Mon point de départ',
     lat: 45.4019,
     lng: 3.3331
   };
@@ -149,7 +149,7 @@
       .bindPopup(`
         <div style="font-family:'Manrope',sans-serif;min-width:160px;">
           <div style="font-family:'Fraunces',serif;font-weight:600;color:#154780;font-size:1.05rem;margin-bottom:2px;">Vézézoux</div>
-          <div style="font-size:0.85rem;color:#6B7280;">Atelier de Julien Burande</div>
+          <div style="font-size:0.85rem;color:#6B7280;">Mon point de départ</div>
           <div style="font-size:0.75rem;color:#1E5FA8;margin-top:6px;font-weight:600;">📍 Mon point de départ</div>
         </div>
       `);
@@ -165,7 +165,7 @@
             <div style="font-family:'Manrope',sans-serif;min-width:140px;">
               <div style="font-family:'Fraunces',serif;font-weight:600;color:#154780;font-size:1rem;margin-bottom:2px;">${c.name}</div>
               <div style="font-size:0.8rem;color:#6B7280;">Département ${c.dept}</div>
-              <div style="font-size:0.8rem;color:#E63027;margin-top:4px;font-weight:600;">⏱ ${c.time} de l'atelier</div>
+              <div style="font-size:0.8rem;color:#E63027;margin-top:4px;font-weight:600;">⏱ ${c.time} de chez moi</div>
             </div>
           `);
       });

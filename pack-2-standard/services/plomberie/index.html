@@ -37,6 +37,26 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Combien coûte une intervention de plombier à Brioude ?","acceptedAnswer":{"@type":"Answer","text":"Un dépannage simple coûte entre 80 € et 200 € selon la nature de l'intervention. Pour des travaux plus importants (rénovation, installation neuve), un devis détaillé et gratuit vous est remis avant tout démarrage."}},{"@type":"Question","name":"Quel délai pour une intervention de plomberie ?","acceptedAnswer":{"@type":"Answer","text":"Pour une urgence, je tente de me rendre chez vous dans la journée. Pour des travaux planifiés (devis, installation), je propose un rendez-vous sous 3 à 7 jours selon la période."}},{"@type":"Question","name":"Travaillez-vous avec quelles marques de sanitaires ?","acceptedAnswer":{"@type":"Answer","text":"Je travaille avec toutes les grandes marques (Grohe, Jacob Delafon, Geberit, Hansgrohe, Roca, Villeroy & Boch…). Je peux vous fournir le matériel ou poser celui que vous avez choisi."}},{"@type":"Question","name":"Faites-vous la mise aux normes de la plomberie ?","acceptedAnswer":{"@type":"Answer","text":"Oui, je peux mettre votre installation en conformité avec les normes actuelles (DTU 60.1 pour la plomberie sanitaire), notamment lors d'une rénovation ou d'une vente de bien immobilier."}}]}
 </script>
+<style>
+.prestations-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin: 1rem 0 1.5rem;
+}
+.prestation-card {
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  border-left: 3px solid #185FA5;
+  border-radius: 0 8px 8px 0;
+  padding: 1.25rem 1.5rem;
+}
+.prestation-card h3 { margin-top: 0; }
+.prestation-card p { margin-bottom: 0; }
+@media (max-width: 600px) {
+  .prestations-grid { grid-template-columns: 1fr; }
+}
+</style>
 </head>
 <body>
 
@@ -164,6 +184,7 @@
     </nav>
     <span class="eyebrow">Prestation · Brioude · Issoire</span>
     <h1>Plomberie générale à <em class="italic-display" style="color:var(--c-fire);">Brioude</em> et Issoire</h1>
+    <p style="color:#6b7280; font-size:0.95rem; margin:0 0 var(--sp-3); letter-spacing:0.02em;">Brioude · Issoire · Sainte-Florine · Lempdes-sur-Allagnon · Vézézoux</p>
     <p class="lead">Installation et rénovation de toute votre plomberie : sanitaires, robinetterie, canalisations, évacuations. Un travail soigné, des matériaux de qualité, un seul interlocuteur du devis à la mise en service.</p>
     <div style="display:flex; flex-wrap:wrap; gap:var(--sp-3); margin-top:var(--sp-6);">
       <a href="../../contact/" class="btn btn-primary">Demander un devis</a>
@@ -191,17 +212,27 @@
 
 <h2>Mes prestations en plomberie</h2>
 
-<h3>Installation de plomberie neuve</h3>
-<p>Pour vos constructions ou extensions, je conçois et réalise l'ensemble du réseau de plomberie : alimentation eau froide/eau chaude, évacuations, raccordement aux équipements (lave-linge, lave-vaisselle, sanitaires…). Tous les matériaux sont aux normes en vigueur.</p>
+<div class="prestations-grid">
+  <article class="prestation-card">
+    <h3>Installation de plomberie neuve à Brioude et Issoire</h3>
+    <p>Pour vos constructions ou extensions à Brioude, Issoire ou en Haute-Loire, je conçois et réalise l'ensemble du réseau : alimentation eau froide/eau chaude, évacuations, raccordement aux équipements (lave-linge, lave-vaisselle, sanitaires…). Tous les matériaux sont aux normes en vigueur.</p>
+  </article>
 
-<h3>Rénovation et modernisation de plomberie</h3>
-<p>Vieille tuyauterie en plomb ou en cuivre fatigué ? Je remplace votre installation par des matériaux modernes (multicouche PER, cuivre neuf), plus durables et plus performants. Je m'adapte à votre logement, qu'il soit récent ou ancien.</p>
+  <article class="prestation-card">
+    <h3>Rénovation et modernisation de plomberie en Haute-Loire et Puy-de-Dôme</h3>
+    <p>Vieille tuyauterie en plomb ou en cuivre fatigué dans votre maison de Sainte-Florine ou de Lempdes-sur-Allagnon ? Je remplace votre installation par des matériaux modernes (multicouche PER, cuivre neuf), plus durables et plus performants. Je m'adapte à votre logement, qu'il soit récent ou ancien.</p>
+  </article>
 
-<h3>Pose de sanitaires et robinetterie</h3>
-<p>Lavabo, vasque, WC, baignoire, douche, mitigeurs : je pose tous types de sanitaires et de robinetterie, dans les marques que vous souhaitez. Conseil sur le choix selon votre budget et votre usage.</p>
+  <article class="prestation-card">
+    <h3>Pose de sanitaires et robinetterie à Issoire et Brioude</h3>
+    <p>Lavabo, vasque, WC, baignoire, douche, mitigeurs : je pose tous types de sanitaires et de robinetterie à Issoire, Brioude et alentours, dans les marques que vous souhaitez. Conseil sur le choix selon votre budget et votre usage.</p>
+  </article>
 
-<h3>Détartrage et entretien des canalisations</h3>
-<p>L'eau de la région étant calcaire, le détartrage régulier prolonge la durée de vie de vos installations. J'interviens pour le détartrage, l'installation d'adoucisseurs d'eau et l'entretien des canalisations.</p>
+  <article class="prestation-card">
+    <h3>Détartrage et entretien des canalisations en région de Brioude</h3>
+    <p>L'eau de la région de Brioude et de Vézézoux étant calcaire, le détartrage régulier prolonge la durée de vie de vos installations. J'interviens pour le détartrage, l'installation d'adoucisseurs d'eau et l'entretien des canalisations.</p>
+  </article>
+</div>
 
 <div class="callout">
 <p><strong>Une fuite, un dégât des eaux ?</strong> Pour les <strong>urgences plomberie</strong>, consultez ma page dédiée <a href="../../services/depannage-plomberie/">Dépannage urgent</a>.</p>

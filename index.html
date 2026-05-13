@@ -230,27 +230,59 @@
   .pack-features li.highlight::before {
     color: #E63027;
   }
-  .pack-badge-exclusive {
-    display: inline-block;
-    font-size: 0.625rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: white;
-    background: #E63027;
-    padding: 2px 8px;
-    border-radius: 999px;
-    margin-left: 0.5rem;
-    vertical-align: 2px;
-    line-height: 1.4;
+  /* === Bloc "Les + du Pack 3" === */
+  .pack-highlight {
+    background: #FEF7E6;
+    border-left: 4px solid #E63027;
+    border-radius: 10px;
+    padding: 1rem 1.125rem 1.125rem;
+    margin-bottom: 1.5rem;
   }
-  .pack-feature-detail {
+  .pack-highlight-title {
+    font-family: 'Manrope', system-ui, sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #C8202E;
+    margin: 0 0 0.75rem;
+  }
+  .pack-highlight-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .pack-highlight-list li {
+    padding-left: 1.625rem;
+    position: relative;
+  }
+  .pack-highlight-list li::before {
+    content: '✦';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #E63027;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.35;
+  }
+  .pack-highlight-name {
     display: block;
-    margin-top: 0.25rem;
-    font-size: 0.825rem;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #154780;
+    line-height: 1.3;
+  }
+  .pack-highlight-desc {
+    display: block;
+    margin-top: 0.2rem;
+    font-size: 0.875rem;
     color: #6B7280;
     font-weight: 400;
-    line-height: 1.5;
+    line-height: 1.45;
   }
 
   .pack-action {
@@ -761,7 +793,7 @@
         <div class="pack-card-header">
           <span class="pack-tag">Pack 3 — Premium</span>
           <h2>Site premium</h2>
-          <p class="pack-card-tagline">Pack 2 + 1 nouveau billet de blog chaque mois</p>
+          <p class="pack-card-tagline">La visibilité maximale : Google + IA + suivi temps réel</p>
         </div>
         <div class="pack-price">
           <div class="pack-price-amount">
@@ -769,9 +801,26 @@
             <span class="pack-price-currency">€</span>
             <span class="pack-price-period">/mois</span>
           </div>
-          <p class="pack-price-meta"><strong>1 article de blog inclus / mois</strong></p>
+          <p class="pack-price-meta">Engagement 36 mois · Visibilité maximale</p>
         </div>
         <div class="pack-card-body">
+          <div class="pack-highlight">
+            <h4 class="pack-highlight-title">🌟 Les + du Pack 3</h4>
+            <ul class="pack-highlight-list">
+              <li>
+                <span class="pack-highlight-name">Référencement dans les IA</span>
+                <span class="pack-highlight-desc">ChatGPT, Claude, Gemini : votre activité citée dans les réponses générées</span>
+              </li>
+              <li>
+                <span class="pack-highlight-name">12 billets de blog inclus / an</span>
+                <span class="pack-highlight-desc">1 article SEO rédigé et publié chaque mois</span>
+              </li>
+              <li>
+                <span class="pack-highlight-name">Statistiques en temps réel 24h/24</span>
+                <span class="pack-highlight-desc">Dashboard personnalisé Looker Studio accessible à tout moment</span>
+              </li>
+            </ul>
+          </div>
           <h4 class="pack-section-title">Création du site</h4>
           <ul class="pack-features">
             <li class="highlight">Tout le Pack 2, plus :</li>
@@ -781,11 +830,6 @@
           </ul>
           <h4 class="pack-section-title is-secondary">Référencement</h4>
           <ul class="pack-features">
-            <li class="highlight">
-              <strong>Référencement dans les IA (ChatGPT, Claude, Gemini)</strong><span class="pack-badge-exclusive">Exclusif</span>
-              <span class="pack-feature-detail">Votre activité référencée dans les réponses générées par les assistants IA</span>
-            </li>
-            <li><strong>12 billets de blog inclus / an (1 par mois)</strong></li>
             <li>Suivi Google Search Console</li>
             <li>Reporting mensuel SEO</li>
           </ul>

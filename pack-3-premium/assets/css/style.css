@@ -2239,7 +2239,8 @@ section { padding-block: var(--sp-6); }
   z-index: 3;
   min-height: 580px;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
   padding-block: var(--sp-8);
 }
 

@@ -26,20 +26,20 @@ plombier/
 
 ## 🌐 URLs après déploiement GitHub Pages
 
-Si vous nommez ce repo `votre-pseudo.github.io/plombier`, vous obtiendrez :
+Si vous nommez ce repo `votre-pseudo.github.io/artisans`, vous obtiendrez :
 
 | URL | Contenu |
 |---|---|
-| `votre-pseudo.github.io/plombier/` | Page vitrine (catalogue des packs) |
-| `votre-pseudo.github.io/plombier/pack-1-simple/` | Démo Pack 1 |
-| `votre-pseudo.github.io/plombier/pack-2-standard/` | Démo Pack 2 |
+| `votre-pseudo.github.io/artisans/` | Page vitrine (catalogue des packs) |
+| `votre-pseudo.github.io/artisans/pack-1-simple/` | Démo Pack 1 |
+| `votre-pseudo.github.io/artisans/pack-2-standard/` | Démo Pack 2 |
 
 ## 🚀 Déploiement sur GitHub Pages
 
 ### Étape 1 — Créer le repository
 
 1. [github.com](https://github.com) → **New repository**
-2. Nom : `plombier` (ou tout autre nom)
+2. Nom : `artisans` (ou tout autre nom)
 3. Public ✅
 4. Pas d'initialisation (vide)
 5. Create
@@ -48,7 +48,7 @@ Si vous nommez ce repo `votre-pseudo.github.io/plombier`, vous obtiendrez :
 
 1. Décompressez le ZIP livré
 2. Sur la page du repo vide, cliquez **"uploading an existing file"**
-3. Glissez-déposez **TOUT le contenu** du dossier `plombier-repo/` :
+3. Glissez-déposez **TOUT le contenu** du dossier `artisans-repo/` :
    - `index.html`
    - `README.md`
    - Le dossier `pack-1-simple/`
@@ -62,7 +62,7 @@ Si vous nommez ce repo `votre-pseudo.github.io/plombier`, vous obtiendrez :
 3. Save
 4. Attendre 1-3 minutes
 
-Votre vitrine est en ligne à `https://votre-pseudo.github.io/plombier/` !
+Votre vitrine est en ligne à `https://votre-pseudo.github.io/artisans/` !
 
 ## 🔁 Pour ajouter un nouveau template
 
@@ -71,7 +71,7 @@ Pour ajouter un Pack 3 ou un autre métier (électricien, coiffeur, etc.), suive
 1. Créer un nouveau dossier (ex: `pack-3-premium/` ou créer un repo `electricien` séparé)
 2. Y placer les fichiers du template
 3. **IMPORTANT** : utiliser des **liens relatifs** (`./` et `../`) partout — JAMAIS `/...`
-4. Mettre à jour le `index.html` à la racine de `plombier/` pour ajouter une carte du nouveau pack
+4. Mettre à jour le `index.html` à la racine de `artisans/` pour ajouter une carte du nouveau pack
 5. Commit et push
 
 ## ⚠️ Mode Staging actif
@@ -108,7 +108,7 @@ Pour un autre client (autre plombier), il suffit de modifier les variables CSS d
 
 Tous les liens internes sont **relatifs**. Les sites fonctionnent :
 - En racine d'un domaine (vrai site client : `https://burande-plomberie.fr/`)
-- En sous-dossier GitHub Pages (`https://pseudo.github.io/plombier/pack-1-simple/`)
+- En sous-dossier GitHub Pages (`https://pseudo.github.io/artisans/pack-1-simple/`)
 - Sur Netlify, Vercel, Cloudflare Pages, hébergeur classique
 - En local en double-cliquant sur `index.html`
 

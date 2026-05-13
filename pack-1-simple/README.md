@@ -53,9 +53,9 @@ Chaque page contient :
 
 Tous les liens internes sont en **liens relatifs** (`./`, `../`). Ça veut dire que ce site fonctionne :
 - À la racine d'un domaine (`https://burande-plomberie.fr/`)
-- Dans un sous-dossier (`https://votre-pseudo.github.io/plombier/pack-1-simple/`)
+- Dans un sous-dossier (`https://votre-pseudo.github.io/artisans/pack-1-simple/`)
 - N'importe où ailleurs
 
 ## 🔓 Bascule staging → production
 
-Voir le README principal du repo `plombier/` pour la procédure de bascule en production.
+Voir le README principal du repo `artisans/` pour la procédure de bascule en production.

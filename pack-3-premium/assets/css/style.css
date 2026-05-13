@@ -2259,6 +2259,7 @@ section { padding-block: var(--sp-6); }
 .hero-bg h1 {
   color: var(--c-white);
   margin-block: var(--sp-3) var(--sp-4);
+  font-size: clamp(2.25rem, 4.2vw, 3.6rem);
 }
 
 .hero-bg h1 em {

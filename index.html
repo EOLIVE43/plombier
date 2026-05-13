@@ -184,8 +184,21 @@
   }
   .pack-features {
     list-style: none;
-    margin-bottom: 1.5rem;
-    flex-grow: 1;
+    margin: 0 0 0.5rem;
+  }
+  .pack-section-title {
+    font-family: 'Manrope', system-ui, sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #475569;
+    margin: 0 0 0.5rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid #E1E5EB;
+  }
+  .pack-section-title.is-secondary {
+    margin-top: 1.25rem;
   }
   .pack-features li {
     padding: 0.45rem 0;
@@ -661,18 +674,19 @@
           <p class="pack-price-meta">Engagement 36 mois · Hébergement inclus</p>
         </div>
         <div class="pack-card-body">
+          <h4 class="pack-section-title">Création du site</h4>
           <ul class="pack-features">
             <li><strong>3 pages essentielles</strong> : accueil, services, contact</li>
-            <li>SEO local complet (Schema.org, FAQ)</li>
             <li>Charte personnalisable</li>
             <li>Formulaire de contact</li>
             <li>Hébergement & nom de domaine inclus</li>
             <li>Optimisé mobile</li>
             <li>Conformité RGPD</li>
-            <li class="disabled">Pages services individuelles</li>
-            <li class="disabled">Cartes interactives</li>
-            <li class="disabled">Section réalisations</li>
-            <li class="disabled">Blog & articles SEO</li>
+          </ul>
+          <h4 class="pack-section-title is-secondary">Référencement</h4>
+          <ul class="pack-features">
+            <li>SEO local complet (Schema.org, FAQ)</li>
+            <li>Optimisation Google Business Profile</li>
           </ul>
           <div class="pack-action">
             <a href="./pack-1-simple/" class="btn btn-ghost" target="_blank" rel="noopener">Voir la démo →</a>
@@ -696,19 +710,23 @@
           <p class="pack-price-meta">Engagement 36 mois · Maintenance incluse</p>
         </div>
         <div class="pack-card-body">
+          <h4 class="pack-section-title">Création du site</h4>
           <ul class="pack-features">
             <li class="highlight">Tout le Pack 1, plus :</li>
             <li><strong>1 page détaillée par service</strong> (×7)</li>
-            <li><strong>Boost SEO Google</strong> (1 mot-clé / page)</li>
             <li>4 pages zones d'intervention</li>
             <li>Cartes interactives Leaflet</li>
             <li>Section Réalisations (galerie)</li>
             <li>Page rénovation salle de bain</li>
             <li>Page avis clients dédiée</li>
+            <li>Page tarifs détaillée</li>
+            <li>Page partenaires & labels</li>
+          </ul>
+          <h4 class="pack-section-title is-secondary">Référencement</h4>
+          <ul class="pack-features">
+            <li><strong>Boost SEO Google</strong> (1 mot-clé / page)</li>
             <li>Schema.org poussé (par zone, service)</li>
-            <li class="disabled">Blog & articles SEO mensuels</li>
-            <li class="disabled">Page tarifs détaillée</li>
-            <li class="disabled">Page partenaires & labels</li>
+            <li>Blog & articles SEO mensuels</li>
           </ul>
           <div class="pack-action">
             <a href="./pack-2-standard/" class="btn btn-ghost" target="_blank" rel="noopener">Voir la démo →</a>
@@ -733,17 +751,19 @@
           <p class="pack-price-meta"><strong>1 article de blog inclus / mois</strong></p>
         </div>
         <div class="pack-card-body">
+          <h4 class="pack-section-title">Création du site</h4>
           <ul class="pack-features">
             <li class="highlight">Tout le Pack 2, plus :</li>
-            <li><strong>Blog actif (5+ articles SEO)</strong></li>
-            <li class="highlight">1 nouveau billet de blog rédigé / mois</li>
-            <li>Page tarifs détaillée</li>
-            <li>Page partenaires & labels</li>
             <li>6+ zones d'intervention détaillées</li>
             <li>Maintenance trimestrielle premium</li>
+            <li>Support prioritaire</li>
+          </ul>
+          <h4 class="pack-section-title is-secondary">Référencement</h4>
+          <ul class="pack-features">
+            <li><strong>Blog actif (5+ articles SEO)</strong></li>
+            <li class="highlight">1 nouveau billet de blog rédigé / mois</li>
             <li>Suivi Google Search Console</li>
             <li>Reporting mensuel SEO</li>
-            <li>Support prioritaire</li>
           </ul>
           <div class="pack-action">
             <a href="./pack-3-premium/" class="btn btn-primary" target="_blank" rel="noopener">Voir la démo →</a>
